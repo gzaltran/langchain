@@ -20,7 +20,7 @@ def load_llm_from_config(config: dict, **kwargs: Any) -> BaseLLM:
     type_to_cls_dict = get_type_to_cls_dict()
 
     if config_type not in type_to_cls_dict:
-        raise ValueError(f"Loading {config_type} LLM not supported")
+        raise ValueError(f"Loading {config_type} LLM not supported TESTE")
 
     llm_cls = type_to_cls_dict[config_type]()
 
