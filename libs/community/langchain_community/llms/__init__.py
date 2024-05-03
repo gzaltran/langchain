@@ -425,6 +425,10 @@ def _import_azure_openai() -> Type[BaseLLM]:
 
     return AzureOpenAI
 
+def _import_azure_openai_chat() -> Type[BaseLLM]:
+    from langchain_openai import AzureChatOpenAI
+
+    return AzureChatOpenAI
 
 def _import_openai() -> Type[BaseLLM]:
     from langchain_community.llms.openai import OpenAI
@@ -765,6 +769,8 @@ def __getattr__(name: str) -> Any:
         return _import_opaqueprompts()
     elif name == "AzureOpenAI":
         return _import_azure_openai()
+    elif name == "AzureChatOpenAI":
+        return _import_azure_openai_chat()
     elif name == "OpenAI":
         return _import_openai()
     elif name == "OpenAIChat":
@@ -956,6 +962,7 @@ def get_type_to_cls_dict() -> Dict[str, Callable[[], Type[BaseLLM]]]:
         "arcee": _import_arcee,
         "aviary": _import_aviary,
         "azure": _import_azure_openai,
+        "azure-openai-chat":_import_azure_openai_chat,
         "azureml_endpoint": _import_azureml_endpoint,
         "baichuan": _import_baichuan,
         "bananadev": _import_bananadev,
