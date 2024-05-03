@@ -862,6 +862,7 @@ __all__ = [
     "Aviary",
     "AzureMLOnlineEndpoint",
     "AzureOpenAI",
+    "AzureChatOpenAI"
     "BaichuanLLM",
     "Banana",
     "Baseten",
