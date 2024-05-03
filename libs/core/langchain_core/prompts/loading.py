@@ -82,6 +82,7 @@ def _load_output_parser(config: dict) -> dict:
             output_parser = StrOutputParser(**_config)
         elif output_parser_type == "simple_json_output_parser":
             output_parser = SimpleJsonOutputParser(**_config)
+            
         else:
             raise ValueError(f"Unsupported output parser {output_parser_type}")
         config["output_parser"] = output_parser
