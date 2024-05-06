@@ -82,7 +82,7 @@ def _load_output_parser(config: dict) -> dict:
             output_parser = StrOutputParser(**_config)
         elif output_parser_type == "simple_json_output_parser":
             output_parser = SimpleJsonOutputParser(**_config)
-            
+
         else:
             raise ValueError(f"Unsupported output parser {output_parser_type}")
         config["output_parser"] = output_parser
@@ -164,7 +164,7 @@ def _load_chat_prompt(config: Dict) -> ChatPromptTemplate:
     """Load chat prompt from config"""
 
     messages = config.pop("messages")
-    messages = [(m['type'], m['prompt']['template']) for m in messages]
+    # messages = [(m['type'], m['prompt']['template']) for m in messages]
     return ChatPromptTemplate.from_messages(messages=messages)
 
 
